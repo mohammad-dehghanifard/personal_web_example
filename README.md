@@ -1,6 +1,6 @@
 # personal_web_example
 
-A new Flutter project.
+Sample personal resume site, developed with Dart programming language and Flutter framework.
 
 ## Getting Started
 
