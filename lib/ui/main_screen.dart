@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import '../data/fake_data.dart';
 import '../widget/header_item.dart';
 import '../widget/slider_item.dart';
 
@@ -57,16 +58,16 @@ class MainScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: CarouselSlider(
-                items: [1,2,3,4,5].map((i) {
+                items: sliderList.map((item) {
                   return Builder(
                     builder: (BuildContext context) {
                       return SliderItem(
-                        title: "title $i",
-                        content: "this is content $i",
-                        imagePath: "https://www.uplooder.net/img/image/63/1939c5b67b29e64ab10cc9de984323d8/38dab210-9afa-43c8-bf4f-febb529508a5140003300933370836268.jpg",
-                        isBtn: true,
-                        onTap: () {},
-                        btnTxt: "btn",
+                        title: item.title,
+                        content: item.content,
+                        imagePath: item.imagePath,
+                        isBtn: item.isBtn,
+                        onTap: item.onTap,
+                        btnTxt: item.btnTxt,
                       );
                     },
                   );
@@ -81,4 +82,5 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
+
 

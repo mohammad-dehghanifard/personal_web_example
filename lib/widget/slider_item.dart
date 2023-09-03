@@ -30,13 +30,25 @@ class SliderItem extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title),
-                Text(content),
+                Text(title,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 22),),
+                SizedBox(height: size.height * 0.01),
+                SizedBox(
+                  width: size.width / 1.6,
+                    child: Text(
+                      content,
+                      maxLines: 4,
+                      overflow: TextOverflow.fade,
+                      style: const TextStyle(fontSize: 18),)),
+                if(isBtn)
+                const Spacer(),
                 Visibility(
                   visible: isBtn ,
-                    child: ElevatedButton(
-                      onPressed: onTap,
-                      child: Text(btnTxt),
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: size.height * 0.02),
+                      child: ElevatedButton(
+                        onPressed: onTap,
+                        child: Text(btnTxt),
+                      ),
                     )
                 )
               ],
