@@ -60,7 +60,14 @@ class MainScreen extends StatelessWidget {
                 items: [1,2,3,4,5].map((i) {
                   return Builder(
                     builder: (BuildContext context) {
-                      return SliderItem();
+                      return SliderItem(
+                        title: "title $i",
+                        content: "this is content $i",
+                        imagePath: "https://www.uplooder.net/img/image/63/1939c5b67b29e64ab10cc9de984323d8/38dab210-9afa-43c8-bf4f-febb529508a5140003300933370836268.jpg",
+                        isBtn: true,
+                        onTap: () {},
+                        btnTxt: "btn",
+                      );
                     },
                   );
                 }).toList(),
@@ -68,7 +75,7 @@ class MainScreen extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                     height: size.height / 2.5,
                     viewportFraction: 1.1),),
-          )
+          ),
         ],
       ),
     );
