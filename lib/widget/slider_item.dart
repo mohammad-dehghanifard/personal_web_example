@@ -37,7 +37,7 @@ class SliderItem extends StatelessWidget {
                     child: Text(
                       content,
                       maxLines: 4,
-                      overflow: TextOverflow.fade,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(fontSize: 18),)),
                 if(isBtn)
                 const Spacer(),
