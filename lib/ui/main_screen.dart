@@ -1,9 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import '../components/widgets/header_item.dart';
+import '../components/widgets/information_section.dart';
+import '../components/widgets/skill_item.dart';
+import '../components/widgets/slider_item.dart';
 import '../data/fake_data.dart';
-import '../widget/header_item.dart';
-import '../widget/information_section.dart';
-import '../widget/slider_item.dart';
+
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -79,15 +81,39 @@ class MainScreen extends StatelessWidget {
                       height: size.height / 2.5,
                       viewportFraction: 1.1),),
             ),
+            SizedBox(height: size.height * 0.02),
 
             // user information section
             InformationSection(size: size,onTap: () {}),
+            SizedBox(height: size.height * 0.06),
+
+            //my service
+            const Text("What i do?",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 32,color: Colors.blueGrey),),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: SizedBox(
+                height: size.height / 1.6,
+                child: GridView.builder(
+                     itemCount: 6,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      childAspectRatio: 2,
+                    ),
+                    itemBuilder: (context, index) {
+                      return SkillItem(size: size);
+                    },),
+              ),
+            ),
+
+
           ],
         ),
       ),
     );
   }
 }
+
+
 
 
 

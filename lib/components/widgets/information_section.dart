@@ -27,7 +27,7 @@ class InformationSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //title
-              const Text("I'm John, a Flutter developer",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22),),
+              const Text("I'm John, a Flutter developer",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22,color: Colors.blueGrey),),
               SizedBox(height: size.height *0.01,),
               // description
               SizedBox(

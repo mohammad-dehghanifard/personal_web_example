@@ -1,4 +1,5 @@
-import '../widget/slider_item.dart';
+
+import '../components/widgets/slider_item.dart';
 
 final List<SliderItem> sliderList = [
   SliderItem(
