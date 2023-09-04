@@ -25,33 +25,24 @@ class MainScreen extends StatelessWidget {
               children: [
                 const FlutterLogo(size: 48,),
                 const Expanded(child: SizedBox()),
-
-                HeaderItem(
-                  onTap: () {},
-                  txt: "Home",
-                ),
-                HeaderItem(
-                  onTap: () {},
-                  txt: "Blog",
-                ),
-                HeaderItem(
-                  onTap: () {},
-                  txt: "About Me",
-                ),
-                HeaderItem(
-                  onTap: () {},
-                  txt: "Contact Me",
-                ),
-                HeaderItem(
-                  onTap: () {},
-                  txt: "Project",
-                ),
-                HeaderItem(
-                  onTap: () {},
-                  txt: "resume",
-                ),
-
-
+                // header items
+                Center(
+                  child: SizedBox(
+                    height: size.height * 0.04,
+                    width: size.width / 3,
+                    child: ListView.builder(
+                        itemCount: headerItemList.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          final item = headerItemList[index];
+                          return Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: HeaderItem(txt: item.txt, onTap: item.onTap),
+                          );
+                        },
+                    ),
+                  ),
+                )
               ],
             ),
             //slider
@@ -148,29 +139,57 @@ class MainScreen extends StatelessWidget {
                     ),
                   ),
                   // indicators
-                   Padding(
-                     padding:  EdgeInsets.only(top: size.height * 0.10),
-                     child: SizedBox(
-                       height: size.height / 3.2,
-                       width: size.width / 1.6,
-                       child: ListView.builder(
-                            itemCount: skillIndicatorList.length,
-                            itemBuilder: (context, index) {
-                              final item = skillIndicatorList[index];
-                             return SkillIndicator(
-                               percent: item.percent,
-                               skillName: item.skillName,
-                             );
-                           },
+                   Column(
+                     children: [
+                       //title
+                       Padding(
+                         padding : EdgeInsets.only(top: size.height * 0.05),
+                         child: RichText(
+                           text: TextSpan(
+                             text: "My ",
+                             style: TextStyle(fontWeight: FontWeight.bold,fontSize: 48,color: Colors.blueGrey.shade800),
+                             children: [
+                               TextSpan(
+                                   text: "Skills",
+                                 style: TextStyle(fontWeight: FontWeight.bold,fontSize: 48,color: Colors.amberAccent.shade700),
+                               )
+                             ]
+                           ),
+                         )
                        ),
-                     ),
+                       // skill indicators
+                       Padding(
+                         padding:  EdgeInsets.only(top: size.height * 0.04),
+                         child: SizedBox(
+                           height: size.height / 3.2,
+                           width: size.width / 1.6,
+                           child: ListView.builder(
+                                itemCount: skillIndicatorList.length,
+                                itemBuilder: (context, index) {
+                                  final item = skillIndicatorList[index];
+                                 return SkillIndicator(
+                                   percent: item.percent,
+                                   skillName: item.skillName,
+                                 );
+                               },
+                           ),
+                         ),
+                       ),
+                     ],
                    )
                 ],
               ),
+            ),
+
+            // footer
+            Container(
+              width: double.infinity,
+              height: size.height * 0.09,
+              color: Colors.blueGrey,
+              child: const Center(
+                child: Text("Developer : Mohammad Dehghanifard"),
+              ),
             )
-
-
-
           ],
         ),
       ),

@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../components/widgets/header_item.dart';
 import '../components/widgets/sikll_indicator.dart';
 import '../components/widgets/skill_item.dart';
 import '../components/widgets/slider_item.dart';
@@ -103,5 +104,32 @@ final List<SkillIndicator> skillIndicatorList = [
   const SkillIndicator(
     percent: 0.6,
     skillName: "FireBase",
+  ),
+];
+
+final List<HeaderItem> headerItemList = [
+  HeaderItem(
+    onTap: () {},
+    txt: "Home",
+  ),
+  HeaderItem(
+    onTap: () {},
+    txt: "Blog",
+  ),
+  HeaderItem(
+    onTap: () {},
+    txt: "About Me",
+  ),
+  HeaderItem(
+    onTap: () {},
+    txt: "Contact Me",
+  ),
+  HeaderItem(
+    onTap: () {},
+    txt: "Project",
+  ),
+  HeaderItem(
+    onTap: () {},
+    txt: "resume",
   ),
 ];
