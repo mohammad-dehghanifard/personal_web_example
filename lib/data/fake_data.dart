@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../components/widgets/sikll_indicator.dart';
 import '../components/widgets/skill_item.dart';
 import '../components/widgets/slider_item.dart';
 
@@ -67,5 +68,40 @@ final List<SkillItem> skillList = [
     title: "Title 6",
     content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  ),
+];
+
+final List<SkillIndicator> skillIndicatorList = [
+  const SkillIndicator(
+    percent: 0.9,
+    skillName: "Flutter",
+  ),
+  const SkillIndicator(
+    percent: 0.6,
+    skillName: "WordPress",
+  ),
+  const SkillIndicator(
+    percent: 0.8,
+    skillName: "C#",
+  ),
+  const SkillIndicator(
+    percent: 0.5,
+    skillName: "Unity",
+  ),
+  const SkillIndicator(
+    percent: 0.8,
+    skillName: "Ui/Ux",
+  ),
+  const SkillIndicator(
+    percent: 0.9,
+    skillName: "Kotlin",
+  ),
+  const SkillIndicator(
+    percent: 0.8,
+    skillName: "Java",
+  ),
+  const SkillIndicator(
+    percent: 0.6,
+    skillName: "FireBase",
   ),
 ];

@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../components/widgets/header_item.dart';
 import '../components/widgets/information_section.dart';
+import '../components/widgets/sikll_indicator.dart';
 import '../components/widgets/skill_item.dart';
 import '../components/widgets/slider_item.dart';
 import '../data/fake_data.dart';
@@ -110,14 +112,16 @@ class MainScreen extends StatelessWidget {
               ),
             ),
 
+            // my skills
             Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  //image
                   SizedBox(
                     width: size.width / 3.5,
                     height: size.height / 1.9,
-
                     child: Stack(
                       children: [
                         Container(
@@ -127,10 +131,10 @@ class MainScreen extends StatelessWidget {
                         ),
                         //image
                         Positioned(
-                          top: 20,  // تغییر این مقدار برای تنظیم ارتفاع عکس از بالا
-                          left: 20, // تغییر این مقدار برای تنظیم فاصله از چپ
-                          right: 20, // تغییر این مقدار برای تنظیم فاصله از راست
-                          bottom: 20, // تغییر این مقدار برای تنظیم ارتفاع عکس از پایین
+                          top: 20,
+                          left: 20,
+                          right: 20,
+                          bottom: 20,
                           child: SizedBox(
                             width: size.width / 6,
                             height: size.height / 2,
@@ -143,6 +147,24 @@ class MainScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  // indicators
+                   Padding(
+                     padding:  EdgeInsets.only(top: size.height * 0.10),
+                     child: SizedBox(
+                       height: size.height / 3.2,
+                       width: size.width / 1.6,
+                       child: ListView.builder(
+                            itemCount: skillIndicatorList.length,
+                            itemBuilder: (context, index) {
+                              final item = skillIndicatorList[index];
+                             return SkillIndicator(
+                               percent: item.percent,
+                               skillName: item.skillName,
+                             );
+                           },
+                       ),
+                     ),
+                   )
                 ],
               ),
             )
@@ -155,6 +177,7 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
+
 
 
 
