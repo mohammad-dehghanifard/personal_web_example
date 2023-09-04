@@ -94,16 +94,59 @@ class MainScreen extends StatelessWidget {
               child: SizedBox(
                 height: size.height / 1.6,
                 child: GridView.builder(
-                     itemCount: 6,
+                     itemCount: skillList.length,
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       childAspectRatio: 2,
                     ),
                     itemBuilder: (context, index) {
-                      return SkillItem(size: size);
+                       final item = skillList[index];
+                      return SkillItem(
+                        icon: item.icon,
+                        title: item.title,
+                        content: item.content,
+                      );
                     },),
               ),
             ),
+
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: size.width / 3.5,
+                    height: size.height / 1.9,
+
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: size.width / 5.8,
+                          height: size.height / 1.9,
+                          color: Colors.blueGrey.shade600,
+                        ),
+                        //image
+                        Positioned(
+                          top: 20,  // تغییر این مقدار برای تنظیم ارتفاع عکس از بالا
+                          left: 20, // تغییر این مقدار برای تنظیم فاصله از چپ
+                          right: 20, // تغییر این مقدار برای تنظیم فاصله از راست
+                          bottom: 20, // تغییر این مقدار برای تنظیم ارتفاع عکس از پایین
+                          child: SizedBox(
+                            width: size.width / 6,
+                            height: size.height / 2,
+                            child: Image.network(
+                              "https://www.uplooder.net/img/image/79/ac963fc31a71c0b57d73cb08e6c1de3b/img.jpg",
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+
 
 
           ],

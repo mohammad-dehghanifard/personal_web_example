@@ -1,4 +1,8 @@
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../components/widgets/skill_item.dart';
 import '../components/widgets/slider_item.dart';
 
 final List<SliderItem> sliderList = [
@@ -24,5 +28,44 @@ final List<SliderItem> sliderList = [
     title: "title 4",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     imagePath: "https://www.uplooder.net/img/image/70/64e1072d9b53cc21ef9ef8f6e5713bb0/necessary-programmer-skills-min.jpg",
+  ),
+];
+
+final List<SkillItem> skillList = [
+  const SkillItem(
+    icon: Icons.code,
+    title: "Title 1",
+    content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  ),
+  const SkillItem(
+    icon: Icons.laptop,
+    title: "Title 2",
+    content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  ),
+  const SkillItem(
+    icon: CupertinoIcons.pen,
+    title: "Title 3",
+    content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  ),
+  const SkillItem(
+    icon: CupertinoIcons.device_desktop,
+    title: "Title 4",
+    content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  ),
+  const SkillItem(
+    icon: Icons.web,
+    title: "Title 5",
+    content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  ),
+  const SkillItem(
+    icon: Icons.person_2,
+    title: "Title 6",
+    content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   ),
 ];
